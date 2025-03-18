@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Installation & Setup
 
-## Getting Started
+   Prerequisites
 
-First, run the development server:
+    Node.js (v16 or later recommended)
 
-```bash
+    npm or yarn
+
+# Steps to Run the Project
+
+```
+# Clone the repository
+git clone <your-repo-url>
+cd nextjs-blog
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Run the development server
 npm run dev
 # or
 yarn dev
+
+# Open http://localhost:3000 in your browser
+
+# Run tests
+npm test
 # or
-pnpm dev
-# or
-bun dev
+yarn test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ #  Folder Structure
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+src/
+│-- app/
+│   ├── page.jsx      # Home page (SSG)
+│   ├── posts/
+│   │   ├── [id].jsx  # Post detail page (SSR)
+│-- components/
+│   ├── Card/
+│   │   ├── Card.jsx       # Reusable card component
+│   │   ├── Card.module.css # Card styling
+│   │   ├── Card.test.js   # Unit tests for Card component
+│   ├── SearchBar/
+│   │   ├── SearchBar.jsx       # Search filter component
+│   │   ├── SearchBar.module.css # SearchBar styling
+│   ├── Toast/
+│   │   ├── Toast.jsx       # Toast notification component
+│   │   ├── Toast.module.css # Toast styling
+│   ├── Spinner/
+│   │   ├── Spinner.jsx       # Loading spinner component
+│   │   ├── Spinner.module.css # Spinner styling
+│-- README.md
+│-- package.json
+│-- jest.config.js
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+# Assumptions
 
-To learn more about Next.js, take a look at the following resources:
+    The API response structure from JSONPlaceholder is consistent.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Search filtering is based on the post titles.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    Jest is used for testing components.
 
-## Deploy on Vercel
+# Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Implement pagination for the post list.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Add global state management using Redux or React Context.
+
+    Improve test coverage with integration tests.
